@@ -120,7 +120,7 @@ const Kerman: React.FC = () => {
   const cat = 'kerman';
   const fetchData = async (): Promise<[Array<ServiceItem>, ServiceAI | null]> => {
     const response = await axios.get(`https://rss.kermaneno.ir/yournews/${cat}/`);
-    const description = await axios.get(`https://yn.j-ai.ir/newsletter/latest/politic`);
+    const description = await axios.get(`https://yn.j-ai.ir/newsletter/latest/${cat}`);
     const parsedResponse = Array.isArray(response.data)
       ? response.data.map((item) => ({ ...item, id: Date.now() })) // Add unique id to each item
       : [];

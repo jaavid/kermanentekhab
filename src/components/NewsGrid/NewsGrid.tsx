@@ -44,13 +44,9 @@ const NewsGrid = () => {
     }[]
   >([]);
 
-  const urls = [
-    'https://rss.kermaneno.ir/yournews/kerman/',
-  ];
+  const urls = ['https://rss.kermaneno.ir/yournews/kerman/'];
 
-  const newsletterUrls = [
-    'https://yn.j-ai.ir/newsletter/latest/culture',
-  ];
+  const newsletterUrls = ['https://yn.j-ai.ir/newsletter/latest/kerman'];
 
   useEffect(() => {
     const fetchAllFeeds = async () => {
@@ -112,79 +108,81 @@ const NewsGrid = () => {
   return (
     <>
       <Divider my="md" variant="dashed" />
-        {feeds.map((feed, index) => (
-          <div key={index}>
-            <Text ta="left" size="lg" fw={900} tt="capitalize">
-              {new URL(feed.mainUrl).pathname.split('/')[2]}
-            </Text>
-              <Carousel
-                slideSize="70%"
-                height={300}
-                slideGap="xl"
-                controlsOffset="xs"
-                controlSize={20}
-                loop
-              >
-                {typeof feed.mainData === 'string' ? (
-                  <Text>{feed.mainData}</Text>
-                ) : (
-                  feed.mainData.map((item: NewsItem, index: number) => (
-                    <Carousel.Slide key={index}>
-                      <ArticleImageCard
-                        title={item.title}
-                        id={item.id}
-                        content={item.content}
-                        link={item.link}
-                        media={item.media?.[0]?.href}
-                        origin={item.origin?.title}
-                        crawlTimeMsec={item.crawlTimeMsec}
-                        categories={getCategory(item.categories)}
-                      />
-                    </Carousel.Slide>
-                  ))
-                )}
-              </Carousel>
-              <SimpleGrid cols={2}>
-              {typeof feed.mainData === 'string' ? (
-                  <Text>{feed.mainData}</Text>
-                ) : (
-                  feed.mainData.slice(4, 6).map((item: NewsItem, index: number) => (
-                      <ArticleImageCard
-                        title={item.title}
-                        id={item.id}
-                        content={item.content}
-                        link={item.link}
-                        media={item.media?.[0]?.href}
-                        origin={item.origin?.title}
-                        crawlTimeMsec={item.crawlTimeMsec}
-                        categories={getCategory(item.categories)}
-                      />                  
-                  ))
-                )}
-              </SimpleGrid>
-              <Divider m='sm'/>
-              <SimpleGrid cols={3}>
-              {typeof feed.mainData === 'string' ? (
-                  <Text>{feed.mainData}</Text>
-                ) : (
-                  feed.mainData.slice(7, 19).map((item: NewsItem, index: number) => (
-                    
-                      <ArticleImageCard
-                        title={item.title}
-                        id={item.id}
-                        content={item.content}
-                        link={item.link}
-                        media={item.media?.[0]?.href}
-                        origin={item.origin?.title}
-                        crawlTimeMsec={item.crawlTimeMsec}
-                        categories={getCategory(item.categories)}
-                      />
-                    
-                  ))
-                )}
-              </SimpleGrid>
-          </div>
-        ))}
+      {feeds.map((feed, index) => (
+        <div key={index}>
+          <Text ta="left" size="lg" fw={900} tt="capitalize">
+            {new URL(feed.mainUrl).pathname.split('/')[2]}
+          </Text>
+          <Carousel
+            slideSize="70%"
+            height={300}
+            slideGap="xl"
+            controlsOffset="xs"
+            controlSize={20}
+            loop
+          >
+            {typeof feed.mainData === 'string' ? (
+              <Text>{feed.mainData}</Text>
+            ) : (
+              feed.mainData.map((item: NewsItem, index: number) => (
+                <Carousel.Slide key={index}>
+                  <ArticleImageCard
+                    title={item.title}
+                    id={item.id}
+                    content={item.content}
+                    link={item.link}
+                    media={item.media?.[0]?.href}
+                    origin={item.origin?.title}
+                    crawlTimeMsec={item.crawlTimeMsec}
+                    categories={getCategory(item.categories)}
+                  />
+                </Carousel.Slide>
+              ))
+            )}
+          </Carousel>
+          <SimpleGrid cols={2}>
+            {typeof feed.mainData === 'string' ? (
+              <Text>{feed.mainData}</Text>
+            ) : (
+              feed.mainData
+                .slice(4, 6)
+                .map((item: NewsItem, index: number) => (
+                  <ArticleImageCard
+                    title={item.title}
+                    id={item.id}
+                    content={item.content}
+                    link={item.link}
+                    media={item.media?.[0]?.href}
+                    origin={item.origin?.title}
+                    crawlTimeMsec={item.crawlTimeMsec}
+                    categories={getCategory(item.categories)}
+                  />
+                ))
+            )}
+          </SimpleGrid>
+          <Divider m="sm" />
+          <SimpleGrid cols={3}>
+            {typeof feed.mainData === 'string' ? (
+              <Text>{feed.mainData}</Text>
+            ) : (
+              feed.mainData
+                .slice(7, 19)
+                .map((item: NewsItem, index: number) => (
+                  <ArticleImageCard
+                    title={item.title}
+                    id={item.id}
+                    content={item.content}
+                    link={item.link}
+                    media={item.media?.[0]?.href}
+                    origin={item.origin?.title}
+                    crawlTimeMsec={item.crawlTimeMsec}
+                    categories={getCategory(item.categories)}
+                  />
+                ))
+            )}
+          </SimpleGrid>
+        </div>
+      ))}
     </>
   );
 };

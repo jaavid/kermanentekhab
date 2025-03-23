@@ -1,5 +1,13 @@
 import { createHashRouter, createMemoryRouter, RouterProvider } from 'react-router-dom';
-import { Culture, Economy, Kerman, Politic, Social, Sport, World } from './components/Service/Service';
+import {
+  Culture,
+  Economy,
+  Kerman,
+  Politic,
+  Social,
+  Sport,
+  World,
+} from './components/Service/Service';
 import { HomePage } from './pages/Home.page';
 import { LandingPage } from './pages/Landing.page';
 import { NewsletterPage } from './pages/Newsletter.page';
