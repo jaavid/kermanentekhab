@@ -116,4 +116,23 @@ const Social: React.FC = () => {
   return <ServicePage title="سرویس جامعه" fetchData={fetchData} />;
 };
 
-export { Politic, World, Culture, Sport, Economy, Social };
+const Kerman: React.FC = () => {
+  const cat = 'kerman';
+  const fetchData = async (): Promise<[Array<ServiceItem>, ServiceAI | null]> => {
+    const response = await axios.get(`https://rss.kermaneno.ir/yournews/${cat}/`);
+    const description = await axios.get(`https://yn.j-ai.ir/newsletter/latest/politic`);
+    const parsedResponse = Array.isArray(response.data)
+      ? response.data.map((item) => ({ ...item, id: Date.now() })) // Add unique id to each item
+      : [];
+    const parsedDescription =
+      typeof description.data === 'object' && description.data !== null
+        ? { ...description.data, id: Date.now() }
+        : null;
+
+    return [parsedResponse, parsedDescription];
+  };
+
+  return <ServicePage title=" کرمان" fetchData={fetchData} />;
+};
+
+export { Politic, World, Culture, Sport, Economy, Social, Kerman };

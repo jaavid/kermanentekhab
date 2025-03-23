@@ -32,40 +32,40 @@ import classes from './TopHeader.module.css';
 const mockdata = [
   {
     icon: IconBuildingPavilion,
-    title: 'سیاست',
-    description: ' ',
-    url: '/service/politic',
+    title: 'کرمان',
+    description: 'اخبار و رویدادهای کرمان',
+    url: '/service/kerman',
   },
-  {
-    icon: IconBallBaseball,
-    title: 'ورزش',
-    description: ' ',
-    url: '/service/sport',
-  },
-  {
-    icon: IconWorld,
-    title: 'جهان',
-    description: ' ',
-    url: '/service/world',
-  },
-  {
-    icon: IconUsers,
-    title: 'جامعه',
-    description: ' ',
-    url: '/service/social',
-  },
-  {
-    icon: IconMasksTheater,
-    title: 'فرهنگ',
-    description: ' ',
-    url: '/service/culture',
-  },
-  {
-    icon: IconCoins,
-    title: 'اقتصاد',
-    description: ' ',
-    url: '/service/economy',
-  },
+  // {
+  //   icon: IconBallBaseball,
+  //   title: 'ورزش',
+  //   description: ' ',
+  //   url: '/service/sport',
+  // },
+  // {
+  //   icon: IconWorld,
+  //   title: 'جهان',
+  //   description: ' ',
+  //   url: '/service/world',
+  // },
+  // {
+  //   icon: IconUsers,
+  //   title: 'جامعه',
+  //   description: ' ',
+  //   url: '/service/social',
+  // },
+  // {
+  //   icon: IconMasksTheater,
+  //   title: 'فرهنگ',
+  //   description: ' ',
+  //   url: '/service/culture',
+  // },
+  // {
+  //   icon: IconCoins,
+  //   title: 'اقتصاد',
+  //   description: ' ',
+  //   url: '/service/economy',
+  // },
 ];
 
 export function TopHeader() {

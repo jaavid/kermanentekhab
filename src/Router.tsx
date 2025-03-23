@@ -1,11 +1,11 @@
-import { createMemoryRouter, RouterProvider } from 'react-router-dom';
-import { Culture, Economy, Politic, Social, Sport, World } from './components/Service/Service';
+import { createHashRouter, createMemoryRouter, RouterProvider } from 'react-router-dom';
+import { Culture, Economy, Kerman, Politic, Social, Sport, World } from './components/Service/Service';
 import { HomePage } from './pages/Home.page';
 import { LandingPage } from './pages/Landing.page';
 import { NewsletterPage } from './pages/Newsletter.page';
 import { PodcastPage } from './pages/Podcast.page';
 
-const router = createMemoryRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <HomePage />,
@@ -45,6 +45,10 @@ const router = createMemoryRouter([
   {
     path: '/service/social',
     element: <Social />,
+  },
+  {
+    path: '/service/kerman',
+    element: <Kerman />,
   },
 ]);
 
