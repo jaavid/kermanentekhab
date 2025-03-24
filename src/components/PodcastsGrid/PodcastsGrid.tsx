@@ -55,7 +55,7 @@ const PodcastsGrid = () => {
   const podcast_icon = <IconBuildingBroadcastTower stroke={1} />;
 
   return (
-    <SimpleGrid cols={{ base: 1, sm: 2, lg: 2 }} spacing="sm" verticalSpacing="xl">
+    <SimpleGrid cols={{ base: 1, sm: 1, lg: 1 }} spacing="sm" verticalSpacing="xl">
       {feeds.map((feed, index) => (
         <div key={index}>
           <Text ta="left" size="lg" fw={900} tt="capitalize">
