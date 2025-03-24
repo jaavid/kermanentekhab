@@ -60,7 +60,7 @@ export function Footer() {
       <Container className={classes.inner}>
         <div className={classes.groups}>{groups}</div>
         <div className={classes.logo}>
-          <Image src="https://raw.githubusercontent.com/jaavid/kermanentekhab/refs/heads/master/src/android-chrome-192x192.png" />
+          <Image src="https://raw.githubusercontent.com/jaavid/kermanentekhab/refs/heads/main/src/android-chrome-192x192.png" />
           <Text size="xs" c="dimmed" className={classes.description}>
             خبرها و اطلاعات کرمان، جمع آوری شده از سراسر اینترنت
           </Text>

@@ -97,7 +97,7 @@ export function TopHeader() {
     <Box pb={10}>
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
-          <Image src="https://raw.githubusercontent.com/jaavid/kermanentekhab/refs/heads/master/src/favicon-32x32.png" />
+          <Image src="https://raw.githubusercontent.com/jaavid/kermanentekhab/refs/heads/main/src/favicon-32x32.png" />
           <Group h="100%" gap={0} visibleFrom="sm">
             <Link to="/" className={classes.link}>
               شروع
