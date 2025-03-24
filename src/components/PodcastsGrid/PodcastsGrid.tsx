@@ -15,21 +15,11 @@ const PodcastsGrid = () => {
   >([]);
 
   const urls = [
-    'https://rss.kermaneno.ir/yournews/social/',
-    'https://rss.kermaneno.ir/yournews/world/',
-    'https://rss.kermaneno.ir/yournews/politic/',
-    'https://rss.kermaneno.ir/yournews/sport/',
-    'https://rss.kermaneno.ir/yournews/culture/',
-    'https://rss.kermaneno.ir/yournews/economy/',
+    'https://rss.kermaneno.ir/yournews/kerman/',
   ];
 
   const newsletterUrls = [
-    'https://yn.j-ai.ir/newsletter/latest/social',
-    'https://yn.j-ai.ir/newsletter/latest/world',
-    'https://yn.j-ai.ir/newsletter/latest/politic',
-    'https://yn.j-ai.ir/newsletter/latest/sport',
-    'https://yn.j-ai.ir/newsletter/latest/culture',
-    'https://yn.j-ai.ir/newsletter/latest/economy',
+    'https://yn.j-ai.ir/newsletter/latest/kerman',
   ];
 
   useEffect(() => {
